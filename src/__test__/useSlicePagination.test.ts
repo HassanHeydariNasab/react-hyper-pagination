@@ -53,5 +53,35 @@ describe("useSlicePagination", () => {
     expect(result.current.currentPageItems).toHaveLength(9);
     expect(result.current.hasPrev).toBe(true);
     expect(result.current.hasNext).toBe(false);
+
+    act(() => {
+      result.current.goToPreviousPage();
+    });
+
+    expect(result.current.currentPageNumber).toBe(3);
+    expect(result.current.currentPageItems).toHaveLength(10);
+    expect(result.current.hasPrev).toBe(true);
+    expect(result.current.hasNext).toBe(true);
+
+    act(() => {
+      result.current.goToPreviousPage();
+    });
+    act(() => {
+      result.current.goToPreviousPage();
+    });
+
+    expect(result.current.currentPageNumber).toBe(1);
+    expect(result.current.currentPageItems).toHaveLength(10);
+    expect(result.current.hasPrev).toBe(false);
+    expect(result.current.hasNext).toBe(true);
+
+    act(() => {
+      result.current.goToPreviousPage();
+    });
+
+    expect(result.current.currentPageNumber).toBe(1);
+    expect(result.current.currentPageItems).toHaveLength(10);
+    expect(result.current.hasPrev).toBe(false);
+    expect(result.current.hasNext).toBe(true);
   });
 });
