@@ -1,8 +1,30 @@
 {
-  "name": "hyper-pagination",
+  "name": "react-hyper-pagination",
+  "description": "Pagination using `After Key` and slicing the resulted pages into small pages.",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
+  "main": "./dist/react-hyper-pagination.umd.js",
+  "module": "./dist/react-hyper-pagination.esm.js",
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HassanHeydariNasab/react-hyper-pagination.git"
+  },
+  "keywords": [
+    "react",
+    "pagination",
+    "pagination hook",
+    "after key",
+    "cursor pagination",
+    "two layer pagination",
+    "second pagination"
+  ],
+  "author": "Hassan Heydari Nasab",
+  "license": "MIT",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
@@ -11,6 +33,7 @@
     "test": "vitest"
   },
   "dependencies": {
+    "path": "^0.12.7",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
