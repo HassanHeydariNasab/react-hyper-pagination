@@ -195,6 +195,41 @@ describe("useAfterKeyPagination", () => {
     expect(result.current.superHasPrev).toBe(true);
     expect(result.current.superHasNext).toBe(false);
 
+    // Ensure that we cannot go beyond the last page
+    act(() => {
+      result.current.goToNextPage();
+    });
+
+    expect(result.current.currentPageNumber).toBe(8);
+    expect(result.current.superAfterKey).toBe("item-29");
+    expect(result.current.hasPrev).toBe(true);
+    expect(result.current.hasNext).toBe(false);
+    expect(result.current.superHasPrev).toBe(true);
+    expect(result.current.superHasNext).toBe(false);
+
+    // But we can go back
+    act(() => {
+      result.current.goToPreviousPage();
+    });
+
+    expect(result.current.currentPageNumber).toBe(7);
+    expect(result.current.superAfterKey).toBe("item-29");
+    expect(result.current.hasPrev).toBe(true);
+    expect(result.current.hasNext).toBe(true);
+    expect(result.current.superHasPrev).toBe(true);
+    expect(result.current.superHasNext).toBe(false);
+
+    act(() => {
+      result.current.goToPreviousPage();
+    });
+
+    expect(result.current.currentPageNumber).toBe(6);
+    expect(result.current.superAfterKey).toBe("item-19");
+    expect(result.current.hasPrev).toBe(true);
+    expect(result.current.hasNext).toBe(true);
+    expect(result.current.superHasPrev).toBe(true);
+    expect(result.current.superHasNext).toBe(true);
+
     // TODO: add tests for `onChangeLimit`
     // TODO: add tests for `resetPagination`
   });
