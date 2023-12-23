@@ -1,17 +1,18 @@
+import { useState } from "react";
 import { useAfterKeyPagination } from "./useAfterKeyPagination";
 import { useSlicePagination } from "./useSlicePagination";
 
-interface UseHyperPaginationProps<T> {
+interface UseHyperPaginationProps {
   defaultSuperLimit: number;
   defaultMicroLimit: number;
-  superItems: T[];
 }
 
-export function useHyperPagination<T>({
+export function useHyperPagination({
   defaultMicroLimit,
   defaultSuperLimit,
-  superItems,
-}: UseHyperPaginationProps<T>) {
+}: UseHyperPaginationProps) {
+  const [superItems, setSuperItems] = useState<unknown[]>([]);
+
   const {
     afterKey: superAfterKey,
     currentPageNumber: superCurrentPageNumber,
@@ -42,7 +43,7 @@ export function useHyperPagination<T>({
     items: superItems,
   });
 
-  const goToNext = () => {
+  const goToNextPage = () => {
     if (microHasNext) {
       microGoToNextPage();
     } else {
@@ -57,7 +58,7 @@ export function useHyperPagination<T>({
     }
   };
 
-  const goToPrev = () => {
+  const goToPreviousPage = () => {
     if (microHasPrev) {
       microGoToPreviousPage();
     } else {
@@ -81,16 +82,22 @@ export function useHyperPagination<T>({
     /** It's usually what you want to show to the user */
     microCurrentPageItems,
     currentPageNumber,
+    /** micro pages we can jump after the current page */
     microLastPageNumber,
     microLimit,
     superLimit,
-    goToNext,
-    goToPrev,
+    goToNextPage,
+    goToPreviousPage,
     superResetPagination,
     superOnAfterKeyReceived,
     superOnChangeLimit,
     superHasNext,
     superHasPrev,
+    hasNext: microHasNext || superHasNext,
+    hasPrev: microHasPrev || superHasPrev,
     microOnChangeLimit,
+    superCurrentPageNumber,
+    microCurrentPageNumber,
+    setSuperItems,
   };
 }

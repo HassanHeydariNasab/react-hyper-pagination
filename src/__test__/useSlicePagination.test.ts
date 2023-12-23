@@ -83,5 +83,11 @@ describe("useSlicePagination", () => {
     expect(result.current.currentPageItems).toHaveLength(10);
     expect(result.current.hasPrev).toBe(false);
     expect(result.current.hasNext).toBe(true);
+
+    // TODO: test onChangeLimit
+    // TODO: test resetPagination
+    // TODO: test setCurrentPageNumber
+    // TODO: test lastPageNumber
+    // TODO: test limit
   });
 });

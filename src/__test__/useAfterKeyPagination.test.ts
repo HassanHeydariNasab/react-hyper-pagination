@@ -155,5 +155,8 @@ describe("useAfterKeyPagination", () => {
     expect(result.current.afterKey).toBe("item-29");
     expect(result.current.hasPrev).toBe(true);
     expect(result.current.hasNext).toBe(false);
+
+    // TODO: add tests for `onChangeLimit`
+    // TODO: add tests for `resetPagination`
   });
 });
