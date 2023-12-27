@@ -3,12 +3,12 @@
   "description": "Pagination using `After Key` and slicing the resulted pages into small pages.",
   "version": "1.0.4",
   "type": "module",
-  "main": "./dist/react-hyper-pagination.umd.js",
-  "module": "./dist/react-hyper-pagination.esm.js",
+  "main": "./dist/react-hyper-pagination.umd.cjs",
+  "module": "./dist/react-hyper-pagination.js",
   "exports": {
     ".": {
-      "import": "./dist/react-hyper-pagination.es.js",
-      "require": "./dist/react-hyper-pagination.umd.js"
+      "import": "./dist/react-hyper-pagination.js",
+      "require": "./dist/react-hyper-pagination.umd.cjs"
     }
   },
   "files": [

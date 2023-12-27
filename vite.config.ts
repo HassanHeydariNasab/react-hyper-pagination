@@ -7,9 +7,8 @@ import path from "path";
 export default defineConfig({
   build: {
     lib: {
-      entry: path.resolve(__dirname, "src/lib/index.js"),
+      entry: path.resolve(__dirname, "src/lib/index.ts"),
       name: "react-hyper-pagination",
-      fileName: (format) => `react-hyper-pagination.${format}.js`,
     },
     rollupOptions: {
       external: ["react", "react-dom"],
@@ -20,10 +19,7 @@ export default defineConfig({
       },
     },
   },
-  plugins: [
-    react(),
-    dts({ insertTypesEntry: true, exclude: ["**/__test__/**"] }),
-  ],
+  plugins: [react(), dts({ exclude: ["**/__test__/**"] })],
   test: {
     environment: "jsdom",
   },
