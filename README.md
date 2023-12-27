@@ -1,30 +1,32 @@
-# React + TypeScript + Vite
+# React hooks for pagination
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Install
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+```bash
+npm i react-hyper-pagination
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## Usage
+
+In this package there are some hooks for pagination:
+
+1. `useAfterKeyPagiantion`
+   It works with "after key" and it's a cursor based pagination. It's useful when you need to load more data after the end of a list. For example, you have a list of messages in a chat and you need to load more messages when you scroll to the top of the list. Or you have to use a cursor based pagination and you want to go to the next or previous pages.
+
+- Fetch new page when `afterKey` changes.
+- Call `onAfterKeyReceived` when you receive the new `afterKey` from the back-end.
+
+2. `useSlicePagination`
+   If you have a list of items you want to slice into pages, you can use this hook. It's useful when you have all data on the client side and you want to slice it into pages.
+
+3. `useHyperPagination`
+   It combines `useAfterKeyPagiantion` and `useSlicePagination`. It's useful when you have a cursor based pagination from the back-end that loads a lot of items in pages and you want to slice the data into small pages on the front-end.
+
+- Fetch new super page (cursor based pagination) when `superAfterKey` changes.
+- Call `superOnAfterKeyReceived` and `setSuperItems` when you receive the new `afterKey` and "items" from the back-end.
+- Show `microCurrentPageItems` to the user.
+
+## TODO
+
+[ ] Add `useOffsetLimitPagination`
+[ ] Add some examples for the hooks
