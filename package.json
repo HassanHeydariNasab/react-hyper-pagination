@@ -8,6 +8,7 @@
   "exports": {
     ".": {
       "import": "./dist/react-hyper-pagination.js",
+      "types": "./dist/index.d.ts",
       "require": "./dist/react-hyper-pagination.umd.cjs"
     }
   },
