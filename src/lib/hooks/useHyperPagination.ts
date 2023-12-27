@@ -78,17 +78,22 @@ export function useHyperPagination({
     microCurrentPageNumber;
 
   return {
+    /** Fetch a super page, when `superAfterKey` changes. */
     superAfterKey,
     /** It's usually what you want to show to the user */
     microCurrentPageItems,
+    /** The current page number based on super and micro current page numbers.
+     * Starts from 1
+     * */
     currentPageNumber,
-    /** micro pages we can jump after the current page */
+    /** The last micro page we can jump within the super page */
     microLastPageNumber,
     microLimit,
     superLimit,
     goToNextPage,
     goToPreviousPage,
     superResetPagination,
+    /** Call this when you get a new `afterKey` from API */
     superOnAfterKeyReceived,
     superOnChangeLimit,
     superHasNext,
@@ -98,6 +103,7 @@ export function useHyperPagination({
     microOnChangeLimit,
     superCurrentPageNumber,
     microCurrentPageNumber,
+    /** Call this when you get new items from API */
     setSuperItems,
   };
 }

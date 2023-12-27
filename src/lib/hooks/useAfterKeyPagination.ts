@@ -71,12 +71,14 @@ export function useAfterKeyPagination({
   };
 
   return {
+    /** Fetch a page using `afterKey`, when `afterKey` changes. */
     afterKey,
     hasNext,
     hasPrev,
     limit: state.limit,
     /** Starts from 1 */
     currentPageNumber: state.currentPageIndex + 1,
+    /** Call this function when you receive a new `afterKey` from API */
     onAfterKeyReceived,
     onChangeLimit,
     goToNextPage,

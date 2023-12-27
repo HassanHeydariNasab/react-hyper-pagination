@@ -1,7 +1,7 @@
 import { expect, test, describe } from "vitest";
 import { renderHook, act } from "@testing-library/react";
 
-import { useSlicePagination } from "../hooks/useSlicePagination";
+import { useSlicePagination } from "../src/lib/hooks/useSlicePagination";
 
 describe("useSlicePagination", () => {
   test("should work", () => {

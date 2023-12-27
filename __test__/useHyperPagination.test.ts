@@ -1,7 +1,7 @@
 import { expect, test, describe } from "vitest";
 import { renderHook, act } from "@testing-library/react";
 
-import { useHyperPagination } from "../hooks/useHyperPagination";
+import { useHyperPagination } from "../src/lib/hooks/useHyperPagination";
 
 describe("useAfterKeyPagination", () => {
   test("should work", () => {

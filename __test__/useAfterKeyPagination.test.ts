@@ -1,7 +1,7 @@
 import { expect, test, describe } from "vitest";
 import { renderHook, act } from "@testing-library/react";
 
-import { useAfterKeyPagination } from "../hooks/useAfterKeyPagination";
+import { useAfterKeyPagination } from "../src/lib/hooks/useAfterKeyPagination";
 
 describe("useAfterKeyPagination", () => {
   test("should work", () => {
