@@ -5,6 +5,12 @@
   "type": "module",
   "main": "./dist/react-hyper-pagination.umd.js",
   "module": "./dist/react-hyper-pagination.esm.js",
+  "exports": {
+    ".": {
+      "import": "./dist/react-hyper-pagination.es.js",
+      "require": "./dist/react-hyper-pagination.umd.js"
+    }
+  },
   "files": [
     "dist",
     "README.md"
