@@ -23,7 +23,7 @@
     "second pagination"
   ],
   "author": "Hassan Heydari Nasab",
-  "license": "MIT",
+  "license": "WTFPL",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
