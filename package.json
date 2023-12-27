@@ -1,7 +1,7 @@
 {
   "name": "react-hyper-pagination",
   "description": "Pagination using `After Key` and slicing the resulted pages into small pages.",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "type": "module",
   "main": "./dist/react-hyper-pagination.umd.cjs",
   "module": "./dist/react-hyper-pagination.js",
